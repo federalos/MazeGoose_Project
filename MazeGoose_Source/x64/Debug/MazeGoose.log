@@ -1,0 +1,4 @@
+﻿  Main.cpp
+D:\Notes\Allmind\LabGoose_project\LabGoose\MazeGoose\Main.cpp(66,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Notes\Allmind\LabGoose_project\LabGoose\MazeGoose\Main.cpp(67,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  MazeGoose.vcxproj -> D:\Notes\Allmind\LabGoose_project\LabGoose\MazeGoose\x64\Debug\MazeGoose.exe
