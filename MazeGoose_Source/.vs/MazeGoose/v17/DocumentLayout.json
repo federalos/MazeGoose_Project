@@ -1,10 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Notes\\Allmind\\LabGoose_project\\LabGoose\\MazeGoose\\",
+  "WorkspaceRootPath": "D:\\Notes\\Allmind\\MazeGoose_Project\\MazeGoose_Source\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{627F9BC8-F1FA-4624-9174-1A1CDEF8CBBF}|MazeGoose.vcxproj|D:\\Notes\\Allmind\\LabGoose_project\\LabGoose\\MazeGoose\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{627F9BC8-F1FA-4624-9174-1A1CDEF8CBBF}|MazeGoose.vcxproj|D:\\Notes\\Allmind\\MazeGoose_Project\\MazeGoose_Source\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{627F9BC8-F1FA-4624-9174-1A1CDEF8CBBF}|MazeGoose.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{627F9BC8-F1FA-4624-9174-1A1CDEF8CBBF}|MazeGoose.vcxproj|D:\\Notes\\Allmind\\MazeGoose_Project\\MazeGoose_Source\\Maze0.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{627F9BC8-F1FA-4624-9174-1A1CDEF8CBBF}|MazeGoose.vcxproj|solutionrelative:Maze0.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{627F9BC8-F1FA-4624-9174-1A1CDEF8CBBF}|MazeGoose.vcxproj|D:\\Notes\\Allmind\\MazeGoose_Project\\MazeGoose_Source\\Maze1.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{627F9BC8-F1FA-4624-9174-1A1CDEF8CBBF}|MazeGoose.vcxproj|solutionrelative:Maze1.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{627F9BC8-F1FA-4624-9174-1A1CDEF8CBBF}|MazeGoose.vcxproj|D:\\NOTES\\ALLMIND\\MAZEGOOSE_PROJECT\\MAZEGOOSE_SOURCE\\EXTERNAL\\SFML\\INCLUDE\\SFML\\GRAPHICS\\GLYPH.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{627F9BC8-F1FA-4624-9174-1A1CDEF8CBBF}|MazeGoose.vcxproj|solutionrelative:EXTERNAL\\SFML\\INCLUDE\\SFML\\GRAPHICS\\GLYPH.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,20 +25,65 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 321,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 683,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Glyph.hpp",
+              "DocumentMoniker": "D:\\Notes\\Allmind\\MazeGoose_Project\\MazeGoose_Source\\External\\SFML\\include\\SFML\\Graphics\\Glyph.hpp",
+              "RelativeDocumentMoniker": "External\\SFML\\include\\SFML\\Graphics\\Glyph.hpp",
+              "ToolTip": "D:\\Notes\\Allmind\\MazeGoose_Project\\MazeGoose_Source\\External\\SFML\\include\\SFML\\Graphics\\Glyph.hpp",
+              "RelativeToolTip": "External\\SFML\\include\\SFML\\Graphics\\Glyph.hpp",
+              "ViewState": "AgIAABwAAAAAAAAAAAAqwDAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-06T21:17:32.022Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Main.cpp",
-              "DocumentMoniker": "D:\\Notes\\Allmind\\LabGoose_project\\LabGoose\\MazeGoose\\Main.cpp",
+              "DocumentMoniker": "D:\\Notes\\Allmind\\MazeGoose_Project\\MazeGoose_Source\\Main.cpp",
               "RelativeDocumentMoniker": "Main.cpp",
-              "ToolTip": "D:\\Notes\\Allmind\\LabGoose_project\\LabGoose\\MazeGoose\\Main.cpp",
+              "ToolTip": "D:\\Notes\\Allmind\\MazeGoose_Project\\MazeGoose_Source\\Main.cpp",
               "RelativeToolTip": "Main.cpp",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAACcAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAAAKQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-06T15:53:04.608Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 133,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Maze1.txt",
+              "DocumentMoniker": "D:\\Notes\\Allmind\\MazeGoose_Project\\MazeGoose_Source\\Maze1.txt",
+              "RelativeDocumentMoniker": "Maze1.txt",
+              "ToolTip": "D:\\Notes\\Allmind\\MazeGoose_Project\\MazeGoose_Source\\Maze1.txt",
+              "RelativeToolTip": "Maze1.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-09-06T21:41:53.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Maze0.txt",
+              "DocumentMoniker": "D:\\Notes\\Allmind\\MazeGoose_Project\\MazeGoose_Source\\Maze0.txt",
+              "RelativeDocumentMoniker": "Maze0.txt",
+              "ToolTip": "D:\\Notes\\Allmind\\MazeGoose_Project\\MazeGoose_Source\\Maze0.txt",
+              "RelativeToolTip": "Maze0.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-09-06T21:09:43.293Z",
               "EditorCaption": ""
             }
           ]

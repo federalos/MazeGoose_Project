@@ -4,7 +4,31 @@
 #include <fstream>
 #include <ostream>
 #include <stdlib.h>
+#include <SFML/Graphics.hpp>
+#include <cctype>
 
+//int main()
+//{
+//	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+//	sf::CircleShape shape(20.f);
+//	shape.setFillColor(sf::Color::Green);
+//
+//	while (window.isOpen())
+//	{
+//		sf::Event event;
+//		while (window.pollEvent(event))
+//		{
+//			if (event.type == sf::Event::Closed)
+//				window.close();
+//		}
+//
+//		window.clear();
+//		window.draw(shape);
+//		window.display();
+//	}
+//
+//	return 0;
+//}
 /*
 1. import map of labirinth from txt file
 # - wall
@@ -47,116 +71,171 @@ Graphics
 	
 */
 
+const int Height = 20;
+const int Width = 20;
+
+struct Position
+{
+	int x;
+	int y;
+};
+
+class Maze
+{
+public:
+	Maze(const std::vector<std::string> slices) {
+		boundary.x = slices[0].size();
+		boundary.y = slices.size();
+		
+		for (int iter_y = 0; iter_y < boundary.y; iter_y++){
+			for (int iter_x = 0; iter_x < boundary.x; iter_x++) {
+				if (slices[iter_y][iter_x] == 'S') {
+					walls[iter_y][iter_x] = true;
+					start.x = iter_x;
+					start.y = iter_y;
+					player.x = start.x;
+					player.y = start.y;
+				}
+				else if (slices[iter_y][iter_x] == 'F'){
+					walls[iter_y][iter_x] = true;
+					finish.x = iter_x;
+					finish.y = iter_y;
+				}
+				else if (slices[iter_y][iter_x] == '.'){
+					walls[iter_y][iter_x] = true;
+				} else{
+					walls[iter_y][iter_x] = false;
+				}
+			}
+		}
+	}
+	void print() const {
+		for (int iter_y = 0; iter_y < boundary.y; iter_y++) {
+			for (int iter_x = 0; iter_x < boundary.x; iter_x++) {
+				if (walls[iter_y][iter_x]) {
+					if ((iter_x == player.x) && (iter_y == player.y)) {
+						std::cout << "X";
+					}
+					else if ((iter_x == start.x) && (iter_y == start.y)) {
+						std::cout << "A";
+					}
+					else if ((iter_x == finish.x) && (iter_y == finish.y)) {
+						std::cout << "O";
+					}
+					else {
+						std::cout << " ";
+					}
+				}
+				else {
+					std::cout << "#";
+				}
+			}
+			std::cout << std::endl;
+		}
+	}
+	
+	void movement(const char& command) {
+		if (tolower(command) == 's') {
+			if (colisionCheck({ player.x, (player.y + 1) })) {
+				player.y++;
+			}
+		}
+		else if (tolower(command) == 'a') {
+			if (colisionCheck({ (player.x - 1), player.y })) {
+				player.x--;
+			}
+		}
+		else if (tolower(command) == 'w') {
+			if (colisionCheck({ player.x, (player.y - 1) })) {
+				player.y--;
+			}
+		}
+		else if (tolower(command) == 'd') {
+			if (colisionCheck({ (player.x + 1), player.y })) {
+				player.x++;
+			}
+		}
+	}
+	
+	Position getPlayer() const {
+		return player;
+	}
+	Position getStart() const {
+		return start;
+	}
+	Position getFinish() const {
+		return finish;
+	}
 
 
+private:
+	bool colisionCheck(const Position& pos) {
+		if (!(walls[pos.y][pos.x]) ||
+			(pos.x > boundary.x) || (pos.y > boundary.y)||
+			(pos.x < 0) || (pos.y < 0)) {
+			return false;
+		}
+		return true;
+	}
+	
+	Position player;
+	Position start;
+	Position finish;
+	bool walls[Height][Width]{false};
+	Position boundary;
+};
 
-int main() {
-
-	std::string path_to_maze = "Maze1.txt";
-	std::ifstream input(path_to_maze);
-
+std::vector<std::string> ParseTXT(const std::string& path) {
+	
+	std::ifstream input(path);
 	std::vector<std::string> slices;
 	std::string slice;
-
 	if (input) {
 		while (getline(input, slice)) {
 			slices.push_back(slice);
 		}
 	}
+	return slices;
+}
+
+bool operator==(const Position& lhs, const Position& rhs) {
+	return ((lhs.x == rhs.x)&&(lhs.y==rhs.y));
+}
+
+bool operator!=(const Position& lhs, const Position& rhs) {
+	return ((lhs.x != rhs.x) || (lhs.y != rhs.y));
+}
+
+int main() {
+	std::string path_to_maze = "Maze1.txt";
+	std::vector<std::string> ReadedMaze = ParseTXT(path_to_maze);
 	
-	int rows = slices.size();
-	int columns = slices[0].size();
+	Maze maze(ReadedMaze);
 
-	std::cout << "Amount of rows: " << rows << std::endl
-			  << "Amount of columns: " << columns << std::endl;
-
-	int Maze_int[20][20] { 0 };
-
-	int Finish_x, Finish_y; 
-	int Start_x, Start_y;
-
-	for (int iter_row = 0; iter_row < rows; iter_row++) {
-		for (int iter_col = 0; iter_col < columns; iter_col++) {
-			if (slices[iter_row][iter_col] == '.') {
-				Maze_int[iter_row][iter_col] = 1;
-			}
-			else if (slices[iter_row][iter_col] == 'S') {
-				Maze_int[iter_row][iter_col] = 2;
-				Start_x = iter_col;
-				Start_y = iter_row;
-			}
-			else if (slices[iter_row][iter_col] == 'F') {
-				Maze_int[iter_row][iter_col] = 3;
-				Finish_x = iter_col;
-				Finish_y = iter_row;
-			}
-		}
-	}
-	std::cout << "Text maze:" << std::endl;
-	for (const auto& item : slices) {
-		std::cout << item << std::endl;
-	}
-
-	std::cout << std::endl;
-	std::cout << "Initializations of maze \n0 = wall \n1=cave \n2 = start \n3= finish" << std::endl;
-
-	for (int iter_y = 0; iter_y < rows; iter_y++) {
-		for (int iter_x = 0; iter_x < columns; iter_x++) {
-			std::cout << Maze_int[iter_y][iter_x];
-		}
-		std::cout << std::endl;
-	}
-
-	int Player_x = Start_x;
-	int Player_y = Start_y;
-
-	std::string operation;
-
-	while ((Player_x != Finish_x) || (Player_y != Finish_y)) {
+	char command;
+	while (maze.getPlayer() != maze.getFinish()){
 		system("CLS");
-		std::cout << std::flush;
-		for (int iter_y = 0; iter_y < rows; iter_y++) {
-			for (int iter_x = 0; iter_x < columns; iter_x++) {
-				if ((Player_x == iter_x) && (Player_y == iter_y)) {
-					std::cout << 'P';
-				} else{
-					if (Maze_int[iter_y][iter_x] == 0) {
-						std::cout << "+";
-					}
-					else if (Maze_int[iter_y][iter_x] == 2){
-						std::cout << "A";
-					}
-					else if (Maze_int[iter_y][iter_x] == 1) {
-						std::cout << " ";
-					}
-					else if (Maze_int[iter_y][iter_x] == 3) {
-						std::cout << "U";
-					}
-					
-				}
-			}
-			std::cout << std::endl;
-		}
-		std::cin >> operation;
-		if (operation == "s") {
-			if ((Player_y + 1 >= 0) && (Player_y + 1 <= rows) && (Maze_int[Player_y + 1][Player_x] != 0)){
-				Player_y++;
-			}
-		}else if (operation == "a") {
-			if ((Player_x - 1 >= 0) && (Player_x - 1 <= rows) && (Maze_int[Player_y][Player_x - 1] != 0)) {
-				Player_x--;
-			}
-		}else if (operation == "d") {
-			if ((Player_x + 1 >= 0) && (Player_x + 1 <= rows) && (Maze_int[Player_y][Player_x + 1] != 0)) {
-				Player_x++;
-			}
-		}else if (operation == "w") {
-			if ((Player_y - 1 >= 0) && (Player_y - 1 <= rows) && (Maze_int[Player_y - 1][Player_x] != 0)) {
-				Player_y--;
-			}
-		}
+		std::cout << "X - you are here" << std::endl
+			<< "O - exit from the Maze" << std::endl
+			<< "A - enter to the Maze" << std::endl
+			<< "# - wall" << std::endl << std::endl
+			<< "AAAVVV_THE MAZE_VVVAAA" << std::endl << std::endl;
+
+		maze.print();
+
+
+		std::cout << std::endl << std::endl
+			<< "/|\\|//|\\|//|\\|//|\\|/" << std::endl 
+			<<" _CONTROL_" << std::endl
+			<< "w - go up" << std::endl
+			<< "s - go down" << std::endl
+			<< "a - go left" << std::endl
+			<< "d - go right" << std::endl
+			<< "WHAT IS YOUR NEX MOVE< ADVENTURE? ";
+		std::cin >> command;
+		maze.movement(command);
 	}
 
-
+	
 	return 0;
 }

@@ -1,0 +1,4 @@
+﻿  Main.cpp
+D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\Main.cpp(87,30): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\Main.cpp(88,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  MazeGoose.vcxproj -> D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\x64\Debug\MazeGoose.exe
