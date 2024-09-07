@@ -1,4 +1,14 @@
-﻿  Main.cpp
-D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\Main.cpp(87,30): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\Main.cpp(88,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+﻿  Game.cpp
+D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\Game.cpp(73,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\Game.cpp(73,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\Game.cpp(77,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\Game.cpp(77,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\Game.cpp(80,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\Game.cpp(80,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\Game.cpp(82,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\Game.cpp(82,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\Game.cpp(84,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\Game.cpp(84,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Main.cpp
+  Generating Code...
   MazeGoose.vcxproj -> D:\Notes\Allmind\MazeGoose_Project\MazeGoose_Source\x64\Debug\MazeGoose.exe
